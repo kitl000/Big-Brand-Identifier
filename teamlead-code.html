@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+input[type=submit] {
+  width: ;
+  background-color: #0066ff; /* #4CAF50; */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=text], select {
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+
+</style>
+</head>
+
+<body>
+  <form id="name">
+    <input type="text" id="input" name="q" placeholder="invocation name...">
+    <input type="submit" value="Submit">
+  </form>
+
+<table id="resultsTable"></table>
+<p id="result"></p>
+
+<script>
+  function newRow(col1, col2) {
+    var resTable = document.getElementById("resultsTable");
+    var row = resTable.insertRow(-1); // new row
+    var column1 = row.insertCell(0); // type column
+    var column2 = row.insertCell(1); // resultScore column
+    column1.innerHTML = col1;
+    column2.innerHTML = col2;
+  }
+
+  var pathname = window.location.search; // the path entered into browser
+  var tempQuery = pathname.split('=')[1]; // the parsed query string
+  var searchQuery = tempQuery.replace(/[+]|[%20]/g, " "); // replace the +s in URL with a space
+
+  var service_url = 'https://kgsearch.googleapis.com/v1/entities:search';
+  var params = {
+    //'query': 'Taylor Swift',
+    'query': searchQuery,
+    'limit': 10,
+    'indent': true,
+    'key' : 'AIzaSyAGTSbTa_hd0qQijkWxxzXGEEkCsmM1XpY',
+  };
+  $.getJSON(service_url + '?callback=?', params, function(response) {
+    // if the array itemListElemet has an entry
+    if(response.itemListElement[0]) {
+      // add header
+      newRow("<b>Category</b>", "<b>Score</b>");
+      $.each(response.itemListElement, function(i, element) {
+        // convert jQuery to string and insert in respective column
+        newRow(($('<div>', {text:element['result']['@type']}).prop('innerHTML').replace(/[,]/g, ", ")),
+        parseInt($('<div>', {text:element['resultScore']}).prop('innerHTML'), 10));
+      });
+    }
+    // if the array doesn't have an entry, no results were found
+    else{
+      document.getElementById("result").innerHTML = "No results found!";
+    }
+  });
+</script>
+</body>
+</html>
