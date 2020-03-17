@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/knowledge/kgsearch/widget/1.0/widget.min.css">
+  <style>
+    .kge-search-picker {
+    width: <600px>;
+    }
+  </style>
+  <!-- Javascript -->
+  <script src="https://www.gstatic.com/knowledge/kgsearch/widget/1.0/widget.min.js"></script>
+  <script src="/js/jquery-2.1.4.js"></script>
+  <script src="/js/popup.js"></script>
+</head>
+
+<body>
+  <h2>Google Search</h2>
+  <input type="text" id="myInput" placeholder="Start typing a search term...">
+  <script type="text/javascript">
+  KGSearchWidget('AIzaSyCook6Atf9bt1LYzytpxVByHPa1wNId2tI', document.getElementById("myInput"), {});
+  </script>
+</body>
+
+</html>
