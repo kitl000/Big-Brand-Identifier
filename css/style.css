@@ -1,9 +1,49 @@
+body {
+  min-width: 250px;
+  min-height: 300px;
+  font-size: 10px;
+}
+
+input[type=text],
+select {
+  width: 100%;
+  padding: 10px 5px;
+  margin: 8px 2px;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 3px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 1px;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
+  width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -11,26 +51,4 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
-}
-
-input[type=submit] {
-  width: ;
-  background-color: #0066ff; /* #4CAF50; */
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=text], select {
-  width: 10%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 100%;
 }

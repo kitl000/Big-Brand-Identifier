@@ -1,15 +1,16 @@
 {
-  "name": "Getting Started Example",
+  "name": "AoG BBi",
+  "description": "Brand checker",
   "version": "1.0",
-  "description": "Build an Extension!",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "manifest_version": 2,
   "options_page": "options.html",
+  "permissions": ["storage"],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["options.js", "js/jquery.min.js"],
     "persistent": false
   },
-  "page_action": {
-    "default_popup": "popup.html",
+  "browser_action": {
+    "default_popup": "options.html",
     "default_icon": {
       "16": "images/get_started16.png",
       "32": "images/get_started32.png",
