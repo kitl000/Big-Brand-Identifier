@@ -11,18 +11,13 @@
   },
   "browser_action": {
     "default_popup": "options.html",
-    "default_icon": {
-      "16": "images/get_started16.png",
-      "32": "images/get_started32.png",
-      "48": "images/get_started48.png",
-      "128": "images/get_started128.png"
-    }
+    "default_icon": "img/icon20.png",
+    "default_title": "AoG BBi"
   },
   "icons": {
-    "16": "images/get_started16.png",
-    "32": "images/get_started32.png",
-    "48": "images/get_started48.png",
-    "128": "images/get_started128.png"
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
   },
-  "manifest_version": 2
+  "content_security_policy": "script-src 'self' https://kgsearch.googleapis.com/v1/entities:search; object-src 'self'"
 }

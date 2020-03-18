@@ -13,3 +13,5 @@ Reference:
 https://developers.google.com/knowledge-graph/how-tos/search-widget
 https://developer.chrome.com/extensions/getstarted
 https://developers.google.com/knowledge-graph/reference/rest/v1/
+https://developer.chrome.com/extensions/contentSecurityPolicy
+https://developer.chrome.com/extensions/samples
