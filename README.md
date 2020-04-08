@@ -8,7 +8,7 @@ Creating this extension is a part of my Continuous Improvement Program for Accen
 
 I first used my codes from my previous project, the Knowledge Graph Search Widget to create the base for this project. Next, an extension template from the official Developer Google Chrome documentation was added to give me an idea of how a chrome extension is suppose to look. 
 
-Afterwards, it's a matter of cleaning up codes, sorting files into folders and deleting files not used from the extension template. The main error i had was the content_security_policy as it doesn't allow the extension to pull data from outside sources. To bypass this, i added a line of code in the manifest.json to relax the security. 
+Afterwards, it's a matter of cleaning up codes, adding extra features and sorting files into folders not used from the extension template. The main error i had was the content_security_policy as it doesn't allow the extension to pull data from outside sources. To bypass this, i added a line of code in the manifest.json to relax the security. 
 
 The chrome extension was functional at the end but it had a major flaw whereby i committed with the API Key inside. Immediately, i changed the repository to private, deleted the API key via Google Cloud and created a new one. 
 
